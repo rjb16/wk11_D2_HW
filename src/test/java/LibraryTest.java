@@ -1,6 +1,9 @@
 import org.junit.Before;
+import org.junit.Test;
 
-  public class LibraryTest {
+import static org.junit.Assert.assertEquals;
+
+public class LibraryTest {
 
       Library library;
       Book book1;
@@ -15,7 +18,20 @@ import org.junit.Before;
           book3 = new Book("Tales of Mars", "James Monks", "non-fiction");
 
       }
+      @Test
+
+      public void countBooks(){
+          assertEquals(0, library.bookCount());
+      }
+
+      @Test
+      public void addBookToStock(){
+          library.addBook(book1);
+          assertEquals(1, library.bookCount());
+      }
+
+}
 
 
-  }
+
 
